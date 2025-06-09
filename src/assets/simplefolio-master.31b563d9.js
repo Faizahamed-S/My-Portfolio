@@ -28,7 +28,28 @@
         ? global
         : {};
     /* eslint-enable no-undef */
+      /* eslint-enable no-undef */
+    const roles = ["Software Developer", "Frontend Developer", "Backend Developer", "Full Stack Developer"];
+    let index = 0;
+    const typedText = document.getElementById("typed-text");
   
+    function typeWriter(text, i, cb) {
+      if (i < text.length) {
+        typedText.innerHTML = text.substring(0, i + 1);
+        setTimeout(() => typeWriter(text, i + 1, cb), 100);
+      } else {
+        setTimeout(cb, 1000); // wait before next word
+      }
+    }
+  
+    function startTypingCycle() {
+      typeWriter(roles[index], 0, () => {
+        index = (index + 1) % roles.length;
+        startTypingCycle();
+      });
+    }
+  
+    startTypingCycle();
     // Save the require from previous bundle to this closure if any
     var previousRequire =
       typeof globalObject[parcelRequireName] === 'function' &&
