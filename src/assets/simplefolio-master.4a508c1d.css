@@ -13785,9 +13785,8 @@ section {
 
 .experience-wrapper {
   display: flex;
-  justify-content: space-between; /* Distributes space between items */
-
   flex-wrap: wrap;
+  justify-content:space-around; /* Distributes space between items */
 }
 
 .experience-card {
@@ -13798,7 +13797,8 @@ section {
   margin-top: 20px;
   text-align: left;
   transition: 0.3s;
-  width: 90%; /* Ensures cards take equal width */
+  justify-content:space-around; 
+  width: 100%; /* Ensures cards take equal width */
   font-size: 15px; /* Updated font size */
   height: 100%;
 }
